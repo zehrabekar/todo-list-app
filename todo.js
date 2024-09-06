@@ -14,19 +14,46 @@ eventListeners();
 function eventListeners(){
     // bu fonksiyonun görevi event listener atamak
     form.addEventListener("submit",addTodo);
+    //burada submit eventini sadece butona değil input alanına da eklemiş olduk. böylece değer girdikten sonra butona basarak ya da enter tuşuna basarak submit olayı gerçekleşir
     
 }
 function addTodo(e){
-    //todoInputa girilen değeri almak için :
+   
     const newTodo = todoInput.value.trim();
-    //console.log(newTodo); //input alanına girilen değeri todo ekleyin butonuna tıkladıktan sonra console'a yazdırdı
-    // trim() : input alanına girilen değerin başındaki ve sonundaki gereksiz boşlukları siler 
+    
 
-    //input alanına girilen todo , todolar kısmına list item olarak eklenecek :
-    addTodoToUI(newTodo);
+    if(newTodo === ""){
+        // <div class="alert alert-danger" role="alert">
+        //     This is a danger alert—check it out!
+        //   </div>
+        showAlert("danger","lütfen bir todo girin");
+    }
+    else{
+        addTodoToUI(newTodo);
+        showAlert("success","todo başarıyla eklendi");
+    };
 
     e.preventDefault();
 }
+
+function showAlert(type,message){
+    const alert = document.createElement("div");
+
+    alert.className = `alert alert-${type}`;
+    alert.textContent = message;
+
+    firstCardBody.appendChild(alert);
+
+    //console.log(alert); //<div class="alert alert-danger">lütfen bir todo girin</div>
+
+    //setTimeout
+    setTimeout(function() {
+        alert.remove();
+    },1000);
+    //çıkan mesaj 1 sn sonra ekrandan silinir
+
+}
+
 function addTodoToUI(newTodo){  //input alanına girilen todo , todolar kısmına list item olarak eklenecek :
 
     //      <li class="list-group-item d-flex justify-content-between">
