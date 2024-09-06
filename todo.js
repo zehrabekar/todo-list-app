@@ -23,17 +23,34 @@ function addTodo(e){
     
 
     if(newTodo === ""){
-        // <div class="alert alert-danger" role="alert">
-        //     This is a danger alert—check it out!
-        //   </div>
+        
         showAlert("danger","lütfen bir todo girin");
     }
     else{
         addTodoToUI(newTodo);
+        addTodoToStorage(newTodo);
         showAlert("success","todo başarıyla eklendi");
     };
 
     e.preventDefault();
+}
+function getTodosFromStorage(){ // storagedan tüm todoları alma
+    let todos;
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }
+    else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    return todos;
+}
+function addTodoToStorage(newTodo){
+    let todos = getTodosFromStorage();
+
+    todos.push(newTodo);
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+
 }
 
 function showAlert(type,message){
