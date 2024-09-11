@@ -16,14 +16,26 @@ function eventListeners(){
     form.addEventListener("submit",addTodo);
     //burada submit eventini sadece butona değil input alanına da eklemiş olduk. böylece değer girdikten sonra butona basarak ya da enter tuşuna basarak submit olayı gerçekleşir
     
-    document.addEventListener("DOMContentLoaded",loadAllTodosToUI);
+    document.addEventListener("DOMContentLoaded",loadAllTodosToUI); //sayfa her yüklendiğinde, localStorage'daki tüm todolar kullanıcı arayüzüne (UI) eklenir.
+
+    secondCardBody.addEventListener("click",deleteTodo);
 }
+function deleteTodo(e){
+
+    if(e.target.className === "fa fa-remove"){
+        e.target.parentElement.parentElement.remove();
+        showAlert("success","Todo başarıyla silindi");
+    }
+    //console.log(e.target); // tıkladığımız yeri gösterir
+}
+
 function loadAllTodosToUI(){
     let todos = getTodosFromStorage();
+    //getTodosFromStorage() fonksiyonunu çağırarak localStorage'dan tüm todoları alır. Bu fonksiyon, localStorage'daki "todos" anahtarına ait değeri bir dizi olarak döndürür.
 
     todos.forEach(function(todo){
         addTodoToUI(todo);
-
+        //todos.forEach kullanarak, alınan her bir todo için addTodoToUI(todo) fonksiyonu çağrılır. Yani her todo, ekrana liste öğesi (list item) olarak eklenir.
     })
 }
 
@@ -98,7 +110,7 @@ function addTodoToUI(newTodo){  //input alanına girilen todo , todolar kısmın
     link.href = "#";
     link.className = "delete-item";
     link.innerHTML = "<i class='fa fa-remove'></i>";
-    console.log(listItem);
+    //console.log(listItem);
 
     listItem.className = "list-group-item d-flex justify-content-between";
 
