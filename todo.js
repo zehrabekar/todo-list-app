@@ -16,7 +16,17 @@ function eventListeners(){
     form.addEventListener("submit",addTodo);
     //burada submit eventini sadece butona değil input alanına da eklemiş olduk. böylece değer girdikten sonra butona basarak ya da enter tuşuna basarak submit olayı gerçekleşir
     
+    document.addEventListener("DOMContentLoaded",loadAllTodosToUI);
 }
+function loadAllTodosToUI(){
+    let todos = getTodosFromStorage();
+
+    todos.forEach(function(todo){
+        addTodoToUI(todo);
+
+    })
+}
+
 function addTodo(e){
    
     const newTodo = todoInput.value.trim();
