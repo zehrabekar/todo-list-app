@@ -24,9 +24,24 @@ function deleteTodo(e){
 
     if(e.target.className === "fa fa-remove"){
         e.target.parentElement.parentElement.remove();
+        deleteTodoFromStorage(e.target.parentElement.parentElement.textContent); 
+        //e.target.parentElement.parentElement.textContent arayüzde sildiğimiz todonun içeriğini local storagea gönderir
         showAlert("success","Todo başarıyla silindi");
     }
     //console.log(e.target); // tıkladığımız yeri gösterir
+}
+
+function deleteTodoFromStorage(todo){
+    let todos = getTodosFromStorage();
+
+    todos.forEach(function(deletetodo,index){
+        if (todo === deletetodo){
+            todos.splice(index,1); // todos arrayinden arayüzden sildiğimiz todonun indexinden başlayarak 1 tane todo siler
+        }
+
+    });
+
+    localStorage.setItem("todos",JSON.stringify(todos)); // todo silindikten sonra todos arrayinin güncel halinin local storageda olmasını sağlar
 }
 
 function loadAllTodosToUI(){
