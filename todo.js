@@ -21,7 +21,21 @@ function eventListeners(){
     secondCardBody.addEventListener("click",deleteTodo);
 
     filterInput.addEventListener("keyup",filterTodos);
+
+    clearButton.addEventListener("click",clearAllTodos);
 }
+function clearAllTodos(e){
+    
+    if(confirm("Tümünü silmek istediğinize emin misiniz?")){
+        //arayüzden todoları temizleme
+       // todoList.innerHTML = ""; bu şekilde de yapılabilir
+       while(todoList.firstElementChild != null){
+            todoList.removeChild(todoList.firstElementChild);
+       }
+       localStorage.removeItem("todos");
+    }
+
+};
 function filterTodos(e){
 
     const filterValue = e.target.value.toLowerCase();
