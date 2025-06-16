@@ -1,41 +1,70 @@
-# 🎬 Film Archive App
+# ✅ To-Do List App
 
 ## 📌 Description  
-This project is a simple film archive web app built with **JavaScript (ES6)**.  
-It allows users to add films (with title, director, and poster image URL), display them in a table, store them in **localStorage**, and delete or clear all films.  
-The project was developed as part of a **JavaScript course** on Udemy and was created by following the instructor’s guidance.
+This project is a simple **To-Do List web app** built with **JavaScript (ES6)**.  
+It allows users to add, delete, filter, and clear to-do items. Data is saved using **localStorage**, so tasks stay even after refreshing the page.  
+The app was created as part of a **JavaScript course on Udemy**, following the instructor's guidance.
 
 ---
 
 ## 🎯 Purpose of the Project  
-- Practice using **JavaScript classes**
-- Gain experience with **DOM manipulation**
-- Learn how to store and retrieve data from **localStorage**
-- Develop clean and organized code with **modular structure**
+- Strengthen understanding of **DOM manipulation**
+- Learn to **store and manage data** with `localStorage`
+- Practice **event handling** and user interaction
+- Use a **modular and clean code structure**
+- Build a basic but functional **interactive web application**
 
 ---
 
-## 🧠 What I Learned  
+## 🔍 What I Learned  
 | Skill | Description |
 |-------|-------------|
-| `class` structures | Creating and using ES6 classes like `Film`, `UI`, and `Storage` |
-| DOM manipulation | Dynamically creating, updating, and removing HTML elements |
-| Event handling | Listening to form submissions, clicks, and DOMContentLoaded |
-| localStorage API | Storing and managing persistent data in the browser |
-| Clean code separation | Dividing logic into `film.js`, `ui.js`, `storage.js`, and `project.js` |
+| DOM manipulation | Selecting elements, dynamically creating list items, removing elements, filtering |
+| Event handling | `submit`, `click`, `DOMContentLoaded`, `keyup` events |
+| localStorage API | Saving, retrieving, and deleting data in the browser |
+| Conditional logic | Input validation and feedback messages |
+| Clean UI feedback | `showAlert()` for temporary user messages |
+| Looping and array methods | Using `forEach`, `splice`, `push`, and `indexOf` on arrays |
+
+---
+
+## 💡 How is this different from the Notebook App?  
+> 🧠 **Notebook App** → Class yapılarıyla modüler yapı öğrenildi.  
+> ✅ **To-Do App** → DOM etkileşimleriyle uygulama mantığı pekiştirildi.
 
 ---
 
 ## 🖥️ Features  
-- ✅ Add a new film with title, director, and image URL  
-- ✅ Display all films in a dynamic table  
-- ✅ Save data to browser storage (localStorage)  
-- ✅ Delete a specific film  
-- ✅ Clear the entire film list  
-- ✅ Success/error message feedback  
+- ✅ Add new todos  
+- 🗑️ Delete a specific todo  
+- 🔍 Filter todos as you type  
+- ❌ Clear all todos  
+- 💾 Save todos to `localStorage`  
+- 🟢 User feedback with alert messages  
 
 ---
-## 📷 Screenshot
-A sample view of the app interface after adding some films.
-![Screenshot from 2025-06-16 23-12-55](https://github.com/user-attachments/assets/5731361b-d1d1-4178-9062-2e5967c49844)
-<br>
+
+## 🧠 Technologies  
+- HTML  
+- CSS (basic styling with Bootstrap classes)  
+- JavaScript (ES6)
+
+---
+
+## 🚀 How to Use  
+1. Type a task in the input box  
+2. Click the "Add" button or press Enter 
+3. Use the trash icon 🗑️ to delete a task  
+4. Use the search bar 🔍 to filter tasks  
+5. Press "Clear All" to wipe everything
+
+---
+
+## 📷 Screenshot  
+
+> ✅ Success message after adding a new to-do 
+![Screenshot from 2025-06-16 23-51-23](https://github.com/user-attachments/assets/1f22203a-ec90-4633-9ab8-65ced3e9ff8f)
+>  ❌ Confirmation and UI after clicking the "Clear All" button  
+![Screenshot from 2025-06-16 23-49-56](https://github.com/user-attachments/assets/c742f770-7306-473b-8222-e61526c845f0)
+> 🔍 Filtered list based on input in the search field  
+![Screenshot from 2025-06-17 00-27-44](https://github.com/user-attachments/assets/3b2953a6-2f02-4f1a-ba47-7bae263ae610)
