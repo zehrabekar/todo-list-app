@@ -29,8 +29,8 @@ The app was created as part of a **JavaScript course on Udemy**, following the i
 ---
 
 ## 💡 How is this different from the Notebook App?  
-> 🧠 **Notebook App** → Class yapılarıyla modüler yapı öğrenildi.  
-> ✅ **To-Do App** → DOM etkileşimleriyle uygulama mantığı pekiştirildi.
+> 🧠 **Notebook App** → Learned modular structure using classes. 
+> ✅ **To-Do App** → Application logic was strengthened by interacting with the DOM.
 
 ---
 
